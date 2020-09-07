@@ -135,6 +135,12 @@ variable "user_labels" {
   default     = {}
 }
 
+variable "require_ssl" {
+  description = "Configure ssl requirement on DB connection."
+  type = bool
+  default = true
+}
+
 variable "backup_configuration" {
   description = "The backup_configuration settings subblock for the database setings"
   type = object({

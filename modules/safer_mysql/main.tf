@@ -44,7 +44,7 @@ module "safer_mysql" {
     # We never set authorized networks, we need all connections via the
     # public IP to be mediated by Cloud SQL.
     authorized_networks = []
-    require_ssl         = true
+    require_ssl         = var.require_ssl
     private_network     = var.vpc_network
   }
 
