@@ -28,6 +28,10 @@ project adheres to [Semantic Versioning](http://semver.org/).
 
 * Add support for backup_configuration to mssql database submodule ([#143](https://www.github.com/terraform-google-modules/terraform-google-sql-db/issues/143)) ([bed1cb4](https://www.github.com/terraform-google-modules/terraform-google-sql-db/commit/bed1cb487de3858c9eccfae9ebd3707f94569e0c))
 
+## [4.0.1](https://www.github.com/terraform-google-modules/terraform-google-sql-db/compare/v4.0.0...v4.0.1) (2020-09-07)
+
+* Add support for parameterized require_ssl in safer_mysql
+
 ## [4.0.0](https://www.github.com/terraform-google-modules/terraform-google-sql-db/compare/v3.2.0...v4.0.0) (2020-08-26)
 
 
