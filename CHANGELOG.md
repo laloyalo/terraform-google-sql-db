@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.3.1](https://www.github.com/terraform-google-modules/terraform-google-sql-db/compare/v4.3.0...v4.3.1) (2020-11-26)
+
+
+### Chore
+
+* Merged downstream changes for `require_ssl` variable in safer_mysql
+
 ## [4.3.0](https://www.github.com/terraform-google-modules/terraform-google-sql-db/compare/v4.2.0...v4.3.0) (2020-11-11)
 
 
@@ -30,7 +37,9 @@ project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [4.0.1](https://www.github.com/terraform-google-modules/terraform-google-sql-db/compare/v4.0.0...v4.0.1) (2020-09-07)
 
-* Add support for parameterized require_ssl in safer_mysql
+### Added
+
+* Add support for parameterized `require_ssl` in safer_mysql
 
 ## [4.0.0](https://www.github.com/terraform-google-modules/terraform-google-sql-db/compare/v3.2.0...v4.0.0) (2020-08-26)
 
