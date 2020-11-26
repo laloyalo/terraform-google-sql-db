@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.3.0](https://www.github.com/terraform-google-modules/terraform-google-sql-db/compare/v4.2.0...v4.3.0) (2020-11-11)
+
+
+### Features
+
+* Add variable for managing read replica deletion protection ([#155](https://www.github.com/terraform-google-modules/terraform-google-sql-db/issues/155)) ([9e22cfd](https://www.github.com/terraform-google-modules/terraform-google-sql-db/commit/9e22cfd35f97608d6b5a76dd30c80299d5b782e3))
+* Update all uses of zone to use the expected variable format. ([#156](https://www.github.com/terraform-google-modules/terraform-google-sql-db/issues/156)) ([5210126](https://www.github.com/terraform-google-modules/terraform-google-sql-db/commit/52101264c2aa53bc15372b72459c5475a8aaf795))
+
+## [4.2.0](https://www.github.com/terraform-google-modules/terraform-google-sql-db/compare/v4.1.0...v4.2.0) (2020-10-23)
+
+
+### Features
+
+* **postgres:** Added point_in_time_recovery_enabled backup option for Postgres ([#142](https://www.github.com/terraform-google-modules/terraform-google-sql-db/issues/142)) ([1fcae8a](https://www.github.com/terraform-google-modules/terraform-google-sql-db/commit/1fcae8a4480e1720c83eb2cb9e84c4f768dc767f))
+* Add deletion_protection variable, defaulted to true ([#151](https://www.github.com/terraform-google-modules/terraform-google-sql-db/issues/151)) ([69e1911](https://www.github.com/terraform-google-modules/terraform-google-sql-db/commit/69e19111f8cd0fa60edea437d48e8d8a2ead1f94))
+
+## [4.1.0](https://www.github.com/terraform-google-modules/terraform-google-sql-db/compare/v4.0.0...v4.1.0) (2020-10-06)
+
+
+### Features
+
+* Add support for backup_configuration to mssql database submodule ([#143](https://www.github.com/terraform-google-modules/terraform-google-sql-db/issues/143)) ([bed1cb4](https://www.github.com/terraform-google-modules/terraform-google-sql-db/commit/bed1cb487de3858c9eccfae9ebd3707f94569e0c))
+
 ## [4.0.0](https://www.github.com/terraform-google-modules/terraform-google-sql-db/compare/v3.2.0...v4.0.0) (2020-08-26)
 
 

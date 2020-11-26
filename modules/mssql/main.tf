@@ -45,12 +45,22 @@ resource "google_sql_database_instance" "default" {
   region              = var.region
   encryption_key_name = var.encryption_key_name
   root_password       = coalesce(var.root_password, random_password.root-password.result)
+  deletion_protection = var.deletion_protection
 
   settings {
     tier                        = var.tier
     activation_policy           = var.activation_policy
     availability_type           = var.availability_type
     authorized_gae_applications = var.authorized_gae_applications
+    dynamic "backup_configuration" {
+      for_each = var.backup_configuration.enabled ? [var.backup_configuration] : []
+      content {
+        binary_log_enabled             = lookup(backup_configuration.value, "binary_log_enabled", null)
+        enabled                        = lookup(backup_configuration.value, "enabled", null)
+        start_time                     = lookup(backup_configuration.value, "start_time", null)
+        point_in_time_recovery_enabled = lookup(backup_configuration.value, "point_in_time_recovery_enabled", null)
+      }
+    }
     dynamic "ip_configuration" {
       for_each = [local.ip_configurations[local.ip_configuration_enabled ? "enabled" : "disabled"]]
       content {

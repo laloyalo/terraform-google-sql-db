@@ -14,6 +14,7 @@ The following dependency must be available for SQL Server module:
 | additional\_users | A list of users to be created in your cluster | object | `<list>` | no |
 | authorized\_gae\_applications | The authorized gae applications for the Cloud SQL instances | list(string) | `<list>` | no |
 | availability\_type | The availability type for the master instance.This is only used to set up high availability for the MSSQL instance. Can be either `ZONAL` or `REGIONAL`. | string | `"ZONAL"` | no |
+| backup\_configuration | The database backup configuration. | object | `<map>` | no |
 | create\_timeout | The optional timout that is applied to limit long database creates. | string | `"15m"` | no |
 | database\_flags | The database flags for the master instance. See [more details](https://cloud.google.com/sql/docs/sqlserver/flags) | object | `<list>` | no |
 | database\_version | The database version to use: SQLSERVER_2017_STANDARD, SQLSERVER_2017_ENTERPRISE, SQLSERVER_2017_EXPRESS, or SQLSERVER_2017_WEB | string | `"SQLSERVER_2017_STANDARD"` | no |
@@ -21,6 +22,7 @@ The following dependency must be available for SQL Server module:
 | db\_collation | The collation for the default database. Example: 'en_US.UTF8' | string | `""` | no |
 | db\_name | The name of the default database to create | string | `"default"` | no |
 | delete\_timeout | The optional timout that is applied to limit long database deletes. | string | `"30m"` | no |
+| deletion\_protection | Used to block Terraform from deleting a SQL Instance. | bool | `"true"` | no |
 | disk\_autoresize | Configuration to increase storage size. | bool | `"true"` | no |
 | disk\_size | The disk size for the master instance. | string | `"10"` | no |
 | disk\_type | The disk type for the master instance. | string | `"PD_SSD"` | no |

@@ -146,6 +146,22 @@ variable "ip_configuration" {
   }
 }
 
+variable "backup_configuration" {
+  description = "The database backup configuration."
+  type = object({
+    binary_log_enabled             = bool
+    enabled                        = bool
+    point_in_time_recovery_enabled = bool
+    start_time                     = string
+  })
+  default = {
+    binary_log_enabled             = null
+    enabled                        = false
+    point_in_time_recovery_enabled = null
+    start_time                     = null
+  }
+}
+
 variable "db_name" {
   description = "The name of the default database to create"
   type        = string
@@ -229,4 +245,10 @@ variable "encryption_key_name" {
   description = "The full path to the encryption key used for the CMEK disk encryption"
   type        = string
   default     = null
+}
+
+variable "deletion_protection" {
+  description = "Used to block Terraform from deleting a SQL Instance."
+  type        = bool
+  default     = true
 }

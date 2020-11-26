@@ -51,7 +51,7 @@ variable "tier" {
 
 variable "zone" {
   type        = string
-  description = "The zone for the master instance, it should be something like: `a`, `c`."
+  description = "The zone for the master instance, it should be something like: `us-central1-a`, `us-east1-c`."
 }
 
 variable "activation_policy" {
@@ -125,14 +125,16 @@ variable "user_labels" {
 variable "backup_configuration" {
   description = "The backup_configuration settings subblock for the database setings"
   type = object({
-    enabled    = bool
-    start_time = string
-    location   = string
+    enabled                        = bool
+    start_time                     = string
+    location                       = string
+    point_in_time_recovery_enabled = bool
   })
   default = {
-    enabled    = false
-    start_time = null
-    location   = null
+    enabled                        = false
+    start_time                     = null
+    location                       = null
+    point_in_time_recovery_enabled = false
   }
 }
 
@@ -262,3 +264,26 @@ variable "module_depends_on" {
   default     = []
 }
 
+variable "deletion_protection" {
+  description = "Used to block Terraform from deleting a SQL Instance."
+  type        = bool
+  default     = true
+}
+
+variable "read_replica_deletion_protection" {
+  description = "Used to block Terraform from deleting replica SQL Instances."
+  type        = bool
+  default     = false
+}
+
+variable "enable_default_db" {
+  description = "Enable or disable the creation of the default database"
+  type        = bool
+  default     = true
+}
+
+variable "enable_default_user" {
+  description = "Enable or disable the creation of the default user"
+  type        = bool
+  default     = true
+}

@@ -50,11 +50,13 @@ module "pg" {
 
   // Master configurations
   tier                            = "db-custom-2-13312"
-  zone                            = "c"
+  zone                            = "us-central1-c"
   availability_type               = "REGIONAL"
   maintenance_window_day          = 7
   maintenance_window_hour         = 12
   maintenance_window_update_track = "stable"
+
+  deletion_protection = false
 
   database_flags = [{ name = "autovacuum", value = "off" }]
 
@@ -75,14 +77,14 @@ module "pg" {
   }
 
   backup_configuration = {
-    enabled    = true
-    start_time = "20:55"
-    location   = null
+    enabled                        = true
+    start_time                     = "20:55"
+    location                       = null
+    point_in_time_recovery_enabled = false
   }
 
   // Read replica configurations
   read_replica_name_suffix = "-test"
-
   read_replicas = [
     {
       name             = "0"

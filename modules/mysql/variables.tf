@@ -51,7 +51,7 @@ variable "tier" {
 }
 
 variable "zone" {
-  description = "The zone for the master instance, it should be something like: `a`, `c`."
+  description = "The zone for the master instance, it should be something like: `us-central1-a`, `us-east1-c`."
   type        = string
 }
 
@@ -278,4 +278,16 @@ variable "module_depends_on" {
   description = "List of modules or resources this module depends on."
   type        = list(any)
   default     = []
+}
+
+variable "deletion_protection" {
+  description = "Used to block Terraform from deleting a SQL Instance."
+  type        = bool
+  default     = true
+}
+
+variable "read_replica_deletion_protection" {
+  description = "Used to block Terraform from deleting replica SQL Instances."
+  type        = bool
+  default     = false
 }
