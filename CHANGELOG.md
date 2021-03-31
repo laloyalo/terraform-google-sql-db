@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 
+## [5.0.1](https://www.github.com/terraform-google-modules/terraform-google-sql-db/compare/v5.0.0...v5.0.1) (2021-03-31)
+
+### Chore
+
+* Merged downstream changes for `require_ssl` variable in safer_mysql
+
 ## [5.0.0](https://www.github.com/terraform-google-modules/terraform-google-sql-db/compare/v4.5.0...v5.0.0) (2021-03-25)
 
 
